@@ -11,6 +11,6 @@ func main() {
 	router = gin.Default()
 	router.LoadHTMLGlob("templates/*")
 	router.StaticFile("golang.png", "golang.png")
-	initializeRoutes()
+	//nitializeRoutes()
 	router.Run()
 }
