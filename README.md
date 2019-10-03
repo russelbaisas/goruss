@@ -1,2 +1,2 @@
 # goruss
-My Personal Go Web App
+My Personal Website

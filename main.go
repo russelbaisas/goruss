@@ -1,6 +1,7 @@
 package main
 
 import (
+	"net/http"
 	"github.com/gin-gonic/gin"
 )
 
@@ -10,7 +11,15 @@ func main() {
 
 	router = gin.Default()
 	router.LoadHTMLGlob("templates/*")
-	router.StaticFile("golang.png", "golang.png")
-	initializeRoutes()
-	router.Run()
+	router.GET("/", func(c *gin.Context) {
+	    c.HTML(
+		    http.StatusOK,
+		    "index.html",
+		    gin.H{
+			    "title": "Test Page",
+		    },
+	    )
+	})
+
+	router.Run(":3000")
 }
